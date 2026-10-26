@@ -7,7 +7,8 @@
     <meta name="description" content="Suministro de insumos especializados para la industria papelera, equipo de protección personal (EPP) y soluciones avanzadas de tratamiento de agua industrial en México.">
     <meta name="theme-color" content="#0F172A">
     
-    <link rel="stylesheet" href="main.css">
+    <!-- Hojas de Estilo -->
+    <link rel="stylesheet" href="main.css?v=4.0">
     
     <!-- Favicon SVG en línea -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23059669'/><text x='50%' y='65%' font-size='50' font-weight='800' fill='white' text-anchor='middle'>IT</text></svg>">
@@ -15,7 +16,7 @@
 <body>
 
     <!-- ==========================================
-         HEADER / NAVEGACIÓN CORPORATIVA
+         HEADER CORPORATIVO 2 NIVELES (ESTILO PAXELL)
          ========================================== -->
     <header id="mainHeader">
         <!-- Barra de progreso de lectura superior -->
@@ -23,8 +24,33 @@
             <div id="scrollProgressBar" class="scroll-progress-bar"></div>
         </div>
 
+        <!-- Cintillo Superior Corporativo -->
+        <div class="top-utility-bar">
+            <div class="top-utility-container">
+                <div class="top-utility-left">
+                    <span class="top-utility-tag">Aliado Industrial en México</span>
+                    <span class="top-utility-divider">|</span>
+                    <span>Insumos Papeleros, Grado Alimenticio, EPP y Tratamiento de Agua</span>
+                </div>
+                <div class="top-utility-right">
+                    <a href="#" id="linkTopBarMail" class="top-contact-pill">
+                        <span class="top-contact-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </span>
+                        <span>atoriz485@gmail.com</span>
+                    </a>
+                    <a href="https://wa.me/5214424470567?text=Hola%2C%20buen%20d%C3%ADa.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre.%20%C2%BFPodr%C3%ADan%20proporcionarme%20detalles%2C%20por%20favor%3F%20%C2%A1Gracias!" target="_blank" rel="noopener noreferrer" class="top-contact-pill">
+                        <span class="top-contact-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </span>
+                        <span>+52 (442) 447-0567</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <div class="header-container">
-            <a href="#nosotros" class="logo-link">
+            <a href="#inicio" class="logo-link">
                 <div class="logo-badge">IT</div>
                 <div class="logo-text">
                     <h1>Industrial ToriMex</h1>
@@ -42,10 +68,11 @@
 
             <nav>
                 <ul id="navMenu">
-                    <li><a href="#nosotros" class="nav-link active">Nosotros</a></li>
-                    <li><a href="#catalogo" class="nav-link">Productos & Servicios</a></li>
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#industrias" class="nav-link">Industrias</a></li>
+                    <li><a href="#catalogo" class="nav-link">Productos</a></li>
                     <li><a href="#proceso" class="nav-link">Cómo Trabajamos</a></li>
-                    <li><a href="#por-que-nosotros" class="nav-link">Ventajas</a></li>
                     <li><a href="#faq" class="nav-link">Preguntas</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                     <li>
@@ -60,49 +87,329 @@
     </header>
 
     <!-- ==========================================
-         HERO SECTION / PROPUESTA DE VALOR
+         HERO SLIDER MULTIFONDO CON KEN BURNS Y FORMAS FLOTANTES (ESTILO PAXELL)
          ========================================== -->
-    <section id="nosotros" class="hero">
-        <!-- Elementos decorativos animados de fondo -->
+    <section id="inicio" class="hero-slider-section">
+        <!-- Formas geométricas flotantes estilo Paxell (float-bob-y / float-bob-x) -->
+        <div class="paxell-shape paxell-shape-1 float-bob-y" aria-hidden="true"></div>
+        <div class="paxell-shape paxell-shape-2 float-bob-x" aria-hidden="true"></div>
         <div class="hero-bg-grid" aria-hidden="true"></div>
-        <div class="hero-glow-orb orb-1" aria-hidden="true"></div>
-        <div class="hero-glow-orb orb-2" aria-hidden="true"></div>
 
-        <div class="hero-content">
-            <div class="hero-badge reveal-up">
-                <span class="pulse-dot"></span>
-                <span>Productos y Servicios Industriales</span>
-            </div>
-            <h2 class="reveal-up" data-delay="100">Productos y Soluciones para tus Procesos <span class="highlight">Industriales</span></h2>
-            <p class="reveal-up" data-delay="200">Suministramos insumos de alto rendimiento para el sector papelero y alimenticio, equipos de seguridad certificados de máxima durabilidad y tecnologías avanzadas de tratamiento de agua para cumplir la normatividad ambiental y reducir costos operativos.</p>
-            
-            <div class="hero-buttons reveal-up" data-delay="300">
-                <a href="#catalogo" class="btn btn-primary btn-shimmer">
-                    Explorar Catálogo de Soluciones
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-                <a href="#contacto" class="btn btn-secondary">
-                    Solicitar Cotización Inmediata
-                </a>
+        <div class="hero-slider-wrapper" id="heroSlider">
+            <!-- SLIDE 1: Insumos Papeleros y Alimenticios -->
+            <div class="hero-slide active" data-slide="0">
+                <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-container">
+                    <div class="hero-slide-content">
+                        <div class="hero-badge slide-anim-item" style="--anim-order: 1;">
+                            <span class="pulse-dot"></span>
+                            <span>Proveeduría Industrial Especializada</span>
+                        </div>
+                        <h2 class="slide-anim-item" style="--anim-order: 2;">
+                            Proveedor de <span class="highlight">Insumos y Soluciones</span> para tu Industria
+                        </h2>
+                        <p class="slide-anim-item" style="--anim-order: 3;">
+                            Nos especializamos en el suministro de almidones de alto rendimiento, cuchillas industriales de precisión e insumos para la industria papelera, del cartón y grado alimenticio.
+                        </p>
+                        <div class="hero-buttons slide-anim-item" style="--anim-order: 4;">
+                            <a href="#catalogo" class="btn btn-primary btn-paxell-sweep">
+                                <span>Explorar Catálogo</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="#contacto" class="btn btn-secondary btn-paxell-sweep">
+                                <span>Agendar Asesoría</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- KPIs de Confianza y Solidez con Contadores Animados -->
-            <div class="hero-metrics">
-                <div class="metric-card reveal-up" data-delay="350">
-                    <div class="metric-num" data-count="25" data-prefix="+">0</div>
-                    <div class="metric-label">Años de Experiencia Industrial</div>
+            <!-- SLIDE 2: Seguridad Industrial y Corte -->
+            <div class="hero-slide" data-slide="1">
+                <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-container">
+                    <div class="hero-slide-content">
+                        <div class="hero-badge slide-anim-item" style="--anim-order: 1;">
+                            <span class="pulse-dot"></span>
+                            <span>Cumplimiento Normativo NOM-STPS y ANSI</span>
+                        </div>
+                        <h2 class="slide-anim-item" style="--anim-order: 2;">
+                            Seguridad Industrial y <span class="highlight">Corte de Alta Precisión</span>
+                        </h2>
+                        <p class="slide-anim-item" style="--anim-order: 3;">
+                            Equipamiento de Protección Personal (EPP) certificado y cuchillas industriales de acero templado y carburo de tungsteno para máxima continuidad operativa en planta.
+                        </p>
+                        <div class="hero-buttons slide-anim-item" style="--anim-order: 4;">
+                            <a href="#catalogo" class="btn btn-primary btn-paxell-sweep">
+                                <span>Ver Equipos e Insumos</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="#contacto" class="btn btn-secondary btn-paxell-sweep">
+                                <span>Solicitar Cotización</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="metric-card reveal-up" data-delay="450">
-                    <div class="metric-num" data-count="100" data-suffix="%">0%</div>
-                    <div class="metric-label">Cumplimiento Normativo (STPS/NOM)</div>
+            </div>
+
+            <!-- SLIDE 3: Tratamiento de Agua y Sustentabilidad -->
+            <div class="hero-slide" data-slide="2">
+                <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-container">
+                    <div class="hero-slide-content">
+                        <div class="hero-badge slide-anim-item" style="--anim-order: 1;">
+                            <span class="pulse-dot"></span>
+                            <span>Ingeniería Ambiental y Sustentabilidad</span>
+                        </div>
+                        <h2 class="slide-anim-item" style="--anim-order: 2;">
+                            Soluciones Integrales en <span class="highlight">Tratamiento de Agua</span>
+                        </h2>
+                        <p class="slide-anim-item" style="--anim-order: 3;">
+                            Optimizamos tus procesos hídricos y plantas de tratamiento (PTAR) con tecnología y reactivos especializados para cumplir la norma NOM-001-SEMARNAT y reducir costos.
+                        </p>
+                        <div class="hero-buttons slide-anim-item" style="--anim-order: 4;">
+                            <a href="#contacto" class="btn btn-primary btn-paxell-sweep">
+                                <span>Solicitar Diagnóstico</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="#catalogo" class="btn btn-secondary btn-paxell-sweep">
+                                <span>Conocer Servicios</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="metric-card reveal-up" data-delay="550">
-                    <div class="metric-num">Nacional</div>
-                    <div class="metric-label">Cobertura de Envío en México</div>
+            </div>
+
+            <!-- Controles de Navegación del Slider (Estilo Paxell) -->
+            <div class="hero-slider-nav">
+                <button type="button" class="slider-arrow-btn" id="heroPrevBtn" aria-label="Diapositiva anterior">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button type="button" class="slider-arrow-btn" id="heroNextBtn" aria-label="Siguiente diapositiva">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+
+            <!-- Puntos de Paginación -->
+            <div class="hero-slider-dots" id="heroSliderDots">
+                <button type="button" class="slider-dot active" data-slide="0" aria-label="Ir a diapositiva 1"></button>
+                <button type="button" class="slider-dot" data-slide="1" aria-label="Ir a diapositiva 2"></button>
+                <button type="button" class="slider-dot" data-slide="2" aria-label="Ir a diapositiva 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         TARJETAS DE VALOR SUPERPUESTAS (ESTILO PAXELL FEATURE-TWO)
+         ========================================== -->
+    <section class="paxell-feature-cards-section">
+        <div class="paxell-feature-shape float-bob-y" aria-hidden="true"></div>
+        <div class="paxell-feature-container">
+            <div class="paxell-feature-grid">
+                <div class="paxell-feature-card reveal-up" data-delay="100">
+                    <div class="paxell-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    <div class="paxell-feature-body">
+                        <span class="paxell-feature-num">01</span>
+                        <h3>Distribución de<br> Insumos Industriales</h3>
+                        <p>Industrial ToriMex, tu mejor aliado en planta.</p>
+                    </div>
                 </div>
-                <div class="metric-card reveal-up" data-delay="650">
-                    <div class="metric-num" data-count="24" data-suffix="/7">0/7</div>
-                    <div class="metric-label">Soporte Técnico y Asesoría</div>
+
+                <div class="paxell-feature-card reveal-up" data-delay="200">
+                    <div class="paxell-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                    </div>
+                    <div class="paxell-feature-body">
+                        <span class="paxell-feature-num">02</span>
+                        <h3>Soluciones<br> Integrales B2B</h3>
+                        <p>Relaciones comerciales sólidas y de largo plazo.</p>
+                    </div>
+                </div>
+
+                <div class="paxell-feature-card reveal-up" data-delay="300">
+                    <div class="paxell-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                    </div>
+                    <div class="paxell-feature-body">
+                        <span class="paxell-feature-num">03</span>
+                        <h3>Compromiso<br> y Calidad</h3>
+                        <p>Altos estándares técnicos y normativos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN ACERCA DE NOSOTROS CON DOBLE IMAGEN Y ODOMETER (ESTILO PAXELL ABOUT)
+         ========================================== -->
+    <section id="nosotros" class="paxell-about-section">
+        <div class="section-container">
+            <div class="paxell-about-grid">
+                <!-- Columna Izquierda: Collage de 2 imágenes + Badge de Experiencia con Contador -->
+                <div class="paxell-about-left reveal-left" data-delay="100">
+                    <div class="paxell-about-img-box">
+                        <div class="paxell-about-shape float-bob-y" aria-hidden="true"></div>
+                        <div class="paxell-about-img-main">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80" alt="Procesos Industriales ToriMex" loading="lazy">
+                        </div>
+                        <div class="paxell-about-img-secondary">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Calidad e Ingeniería Industrial" loading="lazy">
+                        </div>
+                        <div class="paxell-experience-badge float-bob-y">
+                            <div class="paxell-exp-number">
+                                <span class="metric-num" data-count="25" data-prefix="+">0</span>
+                            </div>
+                            <div class="paxell-exp-label">
+                                Años de<br>Experiencia
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Historia, Checkmarks y Pilares -->
+                <div class="paxell-about-right reveal-right" data-delay="200">
+                    <span class="section-tag">Acerca de Industrial ToriMex</span>
+                    <h2 class="paxell-about-title">Más que un proveedor, permítenos ser tu aliado comercial</h2>
+                    <p class="paxell-about-lead">
+                        Somos una empresa dedicada a la comercialización, suministro de insumos industriales y soluciones ambientales con un fuerte compromiso en la atención técnica y servicio personalizado para cada planta.
+                    </p>
+
+                    <ul class="paxell-check-list">
+                        <li>
+                            <span class="paxell-check-icon">✓</span>
+                            <span>Suministro confiable para la industria del papel corrugado, cartón y sector alimenticio</span>
+                        </li>
+                        <li>
+                            <span class="paxell-check-icon">✓</span>
+                            <span>Cuchillas de corte industrial y equipos de protección personal (EPP) certificados</span>
+                        </li>
+                        <li>
+                            <span class="paxell-check-icon">✓</span>
+                            <span>Ingeniería y tratamiento de aguas residuales e industriales (cumplimiento NOM)</span>
+                        </li>
+                        <li>
+                            <span class="paxell-check-icon">✓</span>
+                            <span>Atención y asesoría técnica directa encabezada por el Ing. Alfonso Toriz</span>
+                        </li>
+                    </ul>
+
+                    <div class="paxell-about-pillars">
+                        <div class="paxell-pillar-item">
+                            <div class="paxell-pillar-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                            </div>
+                            <div class="paxell-pillar-text">
+                                <strong>Alianzas<br>Comerciales</strong>
+                            </div>
+                        </div>
+                        <div class="paxell-pillar-item">
+                            <div class="paxell-pillar-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                            </div>
+                            <div class="paxell-pillar-text">
+                                <strong>Asesoría e<br>Ingeniería Aplicada</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paxell-about-actions">
+                        <a href="#catalogo" class="btn btn-primary btn-paxell-sweep">
+                            <span>Ver Productos y Servicios</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#industrias" class="btn btn-outline-navy btn-paxell-sweep">
+                            <span>Ver Industrias</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CARRUSEL INTERACTIVO DE INDUSTRIAS COMERCIALES (ESTILO PAXELL PROJECT-FIVE)
+         ========================================== -->
+    <section id="industrias" class="paxell-industries-section">
+        <div class="section-container">
+            <div class="paxell-industries-layout">
+                <!-- Columna Izquierda 1/3 -->
+                <div class="paxell-industries-left reveal-left" data-delay="100">
+                    <span class="section-tag">Especialidad en la Industria</span>
+                    <h2 class="section-title" style="text-align: left;">Industrias Comerciales</h2>
+                    <p class="paxell-industries-desc">
+                        Nuestros insumos, almidones, cuchillas, equipos de protección (EPP) y soluciones de tratamiento de agua se aplican en los sectores productivos más exigentes de México.
+                    </p>
+                    <div class="industries-carousel-controls">
+                        <button type="button" class="ind-Booking-arrow" id="indPrevBtn" aria-label="Anterior industria">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <button type="button" class="ind-Booking-arrow" id="indNextBtn" aria-label="Siguiente industria">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha 2/3: Carrusel de Tarjetas con Cortina Emergente -->
+                <div class="paxell-industries-right reveal-up" data-delay="200">
+                    <div class="industries-carousel-viewport" id="industriesViewport">
+                        <div class="industries-carousel-track" id="industriesTrack">
+                            <!-- Card 1 -->
+                            <article class="industry-showcase-card" onclick="document.querySelector('[data-category=papelera]').click(); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'});">
+                                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" alt="Papel Corrugado y Celulosa" loading="lazy">
+                                <div class="industry-card-overlay">
+                                    <span class="industry-card-tag">Insumos y Almidones</span>
+                                    <h3>Papel Corrugado y Celulosa</h3>
+                                    <p>Almidones nativos y modificados de alta retención y resistencia mecánica.</p>
+                                </div>
+                            </article>
+
+                            <!-- Card 2 -->
+                            <article class="industry-showcase-card" onclick="document.querySelector('[data-category=papelera]').click(); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'});">
+                                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=700&q=80" alt="Corte y Conversión Industrial" loading="lazy">
+                                <div class="industry-card-overlay">
+                                    <span class="industry-card-tag">Maquinaria y Precisión</span>
+                                    <h3>Corte y Conversión</h3>
+                                    <p>Cuchillas circulares y rectas en acero HSS y carburo de tungsteno.</p>
+                                </div>
+                            </article>
+
+                            <!-- Card 3 -->
+                            <article class="industry-showcase-card" onclick="document.querySelector('[data-category=seguridad]').click(); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'});">
+                                <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=700&q=80" alt="Seguridad Industrial EPP" loading="lazy">
+                                <div class="industry-card-overlay">
+                                    <span class="industry-card-tag">NOM-STPS / ANSI</span>
+                                    <h3>Seguridad Industrial (EPP)</h3>
+                                    <p>Protección integral certificada para operarios en plantas de manufactura.</p>
+                                </div>
+                            </article>
+
+                            <!-- Card 4 -->
+                            <article class="industry-showcase-card" onclick="document.querySelector('[data-category=ambiental]').click(); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'});">
+                                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=700&q=80" alt="Tratamiento de Aguas Residuales" loading="lazy">
+                                <div class="industry-card-overlay">
+                                    <span class="industry-card-tag">Soluciones Ambientales</span>
+                                    <h3>Tratamiento de Agua (PTAR)</h3>
+                                    <p>Químicos, polímeros e ingeniería para cumplimiento normativo y reúso.</p>
+                                </div>
+                            </article>
+
+                            <!-- Card 5 -->
+                            <article class="industry-showcase-card" onclick="document.querySelector('[data-category=todos]').click(); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'});">
+                                <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=700&q=80" alt="Industria Alimenticia y Manufactura" loading="lazy">
+                                <div class="industry-card-overlay">
+                                    <span class="industry-card-tag">Grado Industrial y Alimenticio</span>
+                                    <h3>Sector Alimenticio y Químico</h3>
+                                    <p>Materias primas y aditivos con estrictos controles de pureza e inocuidad.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -630,7 +937,7 @@
         // URL oficial de Google Apps Script para sincronizar el catálogo
         window.TORIMEX_DB_URL = "https://script.google.com/macros/s/AKfycbwUvHc7aX54b55vd0xGRrrqBdZq8Q-_Esbo7JJpLprOfjSujFWGPUw5fCn9MwVoAxy4/exec";
     </script>
-   <script src="catalog-data.js"></script>
-<script src="app.js"></script>
+    <script src="catalog-data.js?v=4.0"></script>
+    <script src="app.js?v=4.0"></script>
 </body>
 </html>

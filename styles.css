@@ -2103,3 +2103,901 @@ body.js-reveal-ready .reveal-up.revealed {
         height: 42px;
     }
 }
+
+/* ==========================================================================
+   ESTILO Y ANIMACIONES INSPIRADAS EN PAXELL (Hero Slider Ken Burns,
+   Float-Bob Shapes, Sweep Buttons, Feature Cards, Collage About & Carousel)
+   ========================================================================== */
+
+/* 1. Barra Superior Corporativa (Top Utility Bar estilo #13223c) */
+.top-utility-bar {
+    background-color: #13223C;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.8rem;
+    color: #CBD5E1;
+    transition: all 0.3s ease;
+}
+
+header.header-scrolled .top-utility-bar {
+    display: none;
+}
+
+.top-utility-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.top-utility-left {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.top-utility-tag {
+    background: rgba(5, 150, 105, 0.25);
+    color: #34D399;
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    padding: 0.12rem 0.55rem;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.top-utility-divider {
+    opacity: 0.3;
+}
+
+.top-utility-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.top-contact-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #E2E8F0;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.top-contact-pill:hover {
+    color: #34D399;
+}
+
+.top-contact-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(52, 211, 153, 0.15);
+    color: #34D399;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.top-contact-pill:hover .top-contact-icon {
+    background: var(--emerald-green);
+    color: #FFFFFF;
+    transform: scale(1.1);
+}
+
+/* 2. Animaciones Flotantes Continuas (float-bob-y & float-bob-x de Paxell) */
+@keyframes floatBobY {
+    0% {
+        transform: translateY(-18px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+    100% {
+        transform: translateY(-18px);
+    }
+}
+
+@keyframes floatBobX {
+    0% {
+        transform: translateX(-18px);
+    }
+    50% {
+        transform: translateX(-4px);
+    }
+    100% {
+        transform: translateX(-18px);
+    }
+}
+
+.float-bob-y {
+    animation: floatBobY 3.2s ease-in-out infinite;
+}
+
+.float-bob-x {
+    animation: floatBobX 3.6s ease-in-out infinite;
+}
+
+/* 3. Animaciones Direccionales Scroll Reveal (reveal-left y reveal-right estilo WOW.js) */
+body.js-reveal-ready .reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.js-reveal-ready .reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.js-reveal-ready .reveal-left.revealed,
+body.js-reveal-ready .reveal-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 4. Botones con Efecto Cortina Deslizante (btn-paxell-sweep / thm-btn) */
+.btn-paxell-sweep {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-paxell-sweep::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #0F172A;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: -1;
+    border-radius: inherit;
+}
+
+.btn-secondary.btn-paxell-sweep::before,
+.btn-outline-navy.btn-paxell-sweep::before {
+    background: var(--emerald-green);
+}
+
+.btn-paxell-sweep:hover::before {
+    transform: scaleY(1);
+    transform-origin: top center;
+}
+
+.btn-outline-navy {
+    background: transparent;
+    border: 2px solid var(--primary-navy);
+    color: var(--primary-navy);
+}
+
+.btn-outline-navy:hover {
+    color: #FFFFFF;
+    border-color: var(--emerald-green);
+}
+
+/* 5. Hero Slider Multifondo con Efecto Ken Burns (main-slider-five de Paxell) */
+.hero-slider-section {
+    position: relative;
+    background-color: #0F172A;
+    overflow: hidden;
+    min-height: 610px;
+}
+
+.paxell-shape {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.paxell-shape-1 {
+    top: 12%;
+    right: 6%;
+    width: 150px;
+    height: 150px;
+    border: 2px dashed rgba(52, 211, 153, 0.25);
+    border-radius: 28px;
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.18) 0%, transparent 70%);
+}
+
+.paxell-shape-2 {
+    bottom: 16%;
+    left: 4%;
+    width: 120px;
+    height: 120px;
+    border: 2px solid rgba(56, 189, 248, 0.2);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(2, 132, 199, 0.18) 0%, transparent 70%);
+}
+
+.hero-slider-wrapper {
+    position: relative;
+    min-height: 610px;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.9s ease, visibility 0.9s ease;
+    display: flex;
+    align-items: center;
+    padding: 5.5rem 1.5rem 7.5rem;
+    z-index: 1;
+}
+
+.hero-slide.active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.hero-slide-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1);
+    transition: transform 6.5s ease-out;
+    z-index: 0;
+}
+
+.hero-slide.active .hero-slide-bg {
+    transform: scale(1.13);
+}
+
+.hero-slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        115deg,
+        rgba(15, 23, 42, 0.94) 0%,
+        rgba(15, 23, 42, 0.82) 55%,
+        rgba(5, 150, 105, 0.62) 100%
+    );
+    z-index: 1;
+}
+
+.hero-slide-container {
+    position: relative;
+    z-index: 3;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero-slide-content {
+    max-width: 820px;
+    text-align: left;
+}
+
+.hero-slide-content h2 {
+    font-size: 3.15rem;
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin-bottom: 1.25rem;
+}
+
+.hero-slide-content h2 .highlight {
+    background: linear-gradient(120deg, #38BDF8, #34D399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-slide-content p {
+    font-size: 1.15rem;
+    color: #CBD5E1;
+    max-width: 680px;
+    line-height: 1.7;
+    margin-bottom: 2.15rem;
+}
+
+.hero-slide-content .hero-buttons {
+    justify-content: flex-start;
+    margin-bottom: 0;
+}
+
+/* Animación escalonada de textos en cada cambio de diapositiva (como Paxell) */
+.hero-slide .slide-anim-item {
+    opacity: 0;
+    transform: translateY(36px);
+}
+
+.hero-slide.active .slide-anim-item {
+    animation: paxellSlideItemIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(var(--anim-order, 1) * 180ms);
+}
+
+@keyframes paxellSlideItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(36px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Flechas y puntos del Hero Slider */
+.hero-slider-nav {
+    position: absolute;
+    right: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    z-index: 5;
+}
+
+.slider-arrow-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-arrow-btn:hover {
+    background: var(--emerald-green);
+    border-color: #34D399;
+    transform: scale(1.08);
+}
+
+.hero-slider-dots {
+    position: absolute;
+    bottom: 5.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.65rem;
+    z-index: 5;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+    border: none;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.slider-dot.active {
+    width: 34px;
+    background: #34D399;
+}
+
+/* 6. Tarjetas Superpuestas bajo el Hero (feature-two de Paxell) */
+.paxell-feature-cards-section {
+    position: relative;
+    z-index: 6;
+    margin-top: -3.5rem;
+    padding: 0 1.5rem 2.5rem;
+}
+
+.paxell-feature-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.paxell-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.paxell-feature-card {
+    background: #FFFFFF;
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.85rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    box-shadow: 0 18px 38px -10px rgba(15, 23, 42, 0.14);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Cortina oscura deslizante al pasar el mouse (efecto Paxell feature-two) */
+.paxell-feature-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: -1;
+}
+
+.paxell-feature-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--emerald-green), var(--accent-blue));
+}
+
+.paxell-feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 45px -12px rgba(15, 23, 42, 0.28);
+}
+
+.paxell-feature-card:hover::before {
+    transform: scaleY(1);
+}
+
+.paxell-feature-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    background: var(--emerald-soft);
+    color: var(--emerald-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.35s ease;
+}
+
+.paxell-feature-card:hover .paxell-feature-icon {
+    background: var(--emerald-green);
+    color: #FFFFFF;
+    transform: rotateY(180deg);
+}
+
+.paxell-feature-body {
+    flex: 1;
+    position: relative;
+}
+
+.paxell-feature-num {
+    position: absolute;
+    top: -0.35rem;
+    right: 0;
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #F1F5F9;
+    line-height: 1;
+    transition: color 0.35s ease;
+}
+
+.paxell-feature-card:hover .paxell-feature-num {
+    color: rgba(255, 255, 255, 0.08);
+}
+
+.paxell-feature-body h3 {
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+    line-height: 1.25;
+    margin-bottom: 0.4rem;
+    transition: color 0.35s ease;
+}
+
+.paxell-feature-body p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: color 0.35s ease;
+}
+
+.paxell-feature-card:hover .paxell-feature-body h3 {
+    color: #FFFFFF;
+}
+
+.paxell-feature-card:hover .paxell-feature-body p {
+    color: #CBD5E1;
+}
+
+/* 7. Sección Acerca de Nosotros con Collage de Doble Imagen (about-five de Paxell) */
+.paxell-about-section {
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.paxell-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.paxell-about-img-box {
+    position: relative;
+    padding-bottom: 3.5rem;
+    padding-right: 2.5rem;
+}
+
+.paxell-about-shape {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+    background: radial-gradient(#059669 2px, transparent 2px);
+    background-size: 16px 16px;
+    opacity: 0.35;
+    z-index: 0;
+}
+
+.paxell-about-img-main {
+    position: relative;
+    z-index: 1;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    height: 420px;
+}
+
+.paxell-about-img-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.paxell-about-img-box:hover .paxell-about-img-main img {
+    transform: scale(1.05);
+}
+
+.paxell-about-img-secondary {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 240px;
+    height: 240px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 6px solid #FFFFFF;
+    box-shadow: 0 20px 35px rgba(15, 23, 42, 0.22);
+    z-index: 2;
+}
+
+.paxell-about-img-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.paxell-experience-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: -1.25rem;
+    background: linear-gradient(135deg, var(--primary-navy), #1E293B);
+    color: #FFFFFF;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius-lg);
+    border-left: 5px solid var(--emerald-green);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.32);
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    z-index: 3;
+}
+
+.paxell-exp-number .metric-num {
+    font-size: 2.35rem;
+    font-weight: 900;
+    color: #34D399;
+    margin: 0;
+    line-height: 1;
+}
+
+.paxell-exp-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #E2E8F0;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.paxell-about-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.paxell-about-lead {
+    font-size: 1.02rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.paxell-check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.85rem;
+}
+
+.paxell-check-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.96rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.paxell-check-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--emerald-soft);
+    color: var(--emerald-green);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+}
+
+.paxell-check-list li:hover .paxell-check-icon {
+    background: var(--emerald-green);
+    color: #FFFFFF;
+    transform: scale(1.12);
+}
+
+.paxell-about-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    padding: 1.35rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.85rem;
+}
+
+.paxell-pillar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.paxell-pillar-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #F0F9FF;
+    color: var(--accent-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.paxell-pillar-item:hover .paxell-pillar-icon {
+    background: var(--accent-blue);
+    color: #FFFFFF;
+    transform: translateY(-3px);
+}
+
+.paxell-pillar-text strong {
+    font-size: 0.96rem;
+    color: var(--primary-navy);
+    line-height: 1.3;
+    display: block;
+}
+
+.paxell-about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* 8. Carrusel Interactivo de Industrias Comerciales (project-five de Paxell) */
+.paxell-industries-section {
+    background: #F1F5F9;
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.paxell-industries-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.paxell-industries-desc {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+}
+
+.industries-carousel-controls {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.ind-Booking-arrow {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: var(--primary-navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.ind-Booking-arrow:hover {
+    background: var(--emerald-green);
+    border-color: var(--emerald-green);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.industries-carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+    border-radius: var(--radius-lg);
+}
+
+.industries-carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.industry-showcase-card {
+    min-width: calc(33.333% - 1rem);
+    height: 360px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    background: #0F172A;
+    flex-shrink: 0;
+}
+
+.industry-showcase-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
+}
+
+.industry-showcase-card:hover img {
+    transform: scale(1.1);
+    opacity: 0.85;
+}
+
+/* Cortina emergente inferior en tarjetas de industria (como project-five__content) */
+.industry-card-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 1.5rem 1.35rem;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.96) 0%, rgba(15, 23, 42, 0.78) 70%, transparent 100%);
+    color: #FFFFFF;
+    transform: translateY(28px);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.industry-showcase-card:hover .industry-card-overlay {
+    transform: translateY(0);
+}
+
+.industry-card-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #34D399;
+    margin-bottom: 0.3rem;
+}
+
+.industry-card-overlay h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 0.4rem;
+}
+
+.industry-card-overlay p {
+    font-size: 0.85rem;
+    color: #CBD5E1;
+    line-height: 1.45;
+    opacity: 0;
+    transition: opacity 0.35s ease 0.08s;
+}
+
+.industry-showcase-card:hover .industry-card-overlay p {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .paxell-feature-grid {
+        grid-template-columns: 1fr;
+    }
+    .paxell-about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .paxell-industries-layout {
+        grid-template-columns: 1fr;
+    }
+    .industry-showcase-card {
+        min-width: calc(50% - 0.75rem);
+    }
+    .hero-slide-content h2 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-utility-left {
+        display: none;
+    }
+    .top-utility-container {
+        justify-content: center;
+    }
+    .hero-slider-nav {
+        display: none;
+    }
+    .hero-slide-content h2 {
+        font-size: 2rem;
+    }
+    .paxell-about-img-secondary {
+        width: 165px;
+        height: 165px;
+    }
+    .paxell-experience-badge {
+        left: 0.5rem;
+        padding: 0.9rem 1.1rem;
+    }
+    .paxell-about-pillars {
+        grid-template-columns: 1fr;
+    }
+    .industry-showcase-card {
+        min-width: 100%;
+    }
+}

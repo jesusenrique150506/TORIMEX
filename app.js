@@ -344,13 +344,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    const linkTopBarMail = document.getElementById("linkTopBarMail");
+    if (linkTopBarMail) {
+        linkTopBarMail.addEventListener("click", (e) => {
+            e.preventDefault();
+            openEmailClientChoice({
+                to: EMAIL_CORP,
+                subject: "Contacto Corporativo - Industrial ToriMex",
+                body: "Hola, buen día. Me gustaría obtener más información sobre. ¿Podrían proporcionarme detalles, por favor? ¡Gracias!"
+            });
+        });
+    }
+
     // ==========================================================================
-    // ETAPA 1 & ETAPA 2: ANIMACIONES PROFESIONALES, CONTADORES, FAQ Y SCROLL
+    // ETAPA 1 & ETAPA 2 + ANIMACIONES ESTILO PAXELL (SLIDER, CARRUSEL, REVEAL)
     // ==========================================================================
 
-    // A) Animaciones Scroll Reveal con IntersectionObserver
+    // A) Animaciones Scroll Reveal Direccionales (reveal-up, reveal-left, reveal-right)
     function initScrollReveal() {
-        const revealElements = document.querySelectorAll(".reveal-up");
+        const revealElements = document.querySelectorAll(".reveal-up, .reveal-left, .reveal-right");
         if (!("IntersectionObserver" in window)) {
             revealElements.forEach(el => el.classList.add("revealed"));
             return;
@@ -532,10 +544,157 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // E) Hero Slider Multifondo con Efecto Ken Burns (Estilo Paxell)
+    function initHeroSlider() {
+        const sliderWrapper = document.getElementById("heroSlider");
+        if (!sliderWrapper) return;
+
+        const slides = sliderWrapper.querySelectorAll(".hero-slide");
+        const dots = sliderWrapper.querySelectorAll(".slider-dot");
+        const prevBtn = document.getElementById("heroPrevBtn");
+        const nextBtn = document.getElementById("heroNextBtn");
+        if (slides.length <= 1) return;
+
+        let currentSlide = 0;
+        let autoSlideTimer = null;
+        const SLIDE_INTERVAL = 5500;
+
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove("active");
+            if (dots[currentSlide]) dots[currentSlide].classList.remove("active");
+
+            currentSlide = (index + slides.length) % slides.length;
+
+            slides[currentSlide].classList.add("active");
+            if (dots[currentSlide]) dots[currentSlide].classList.add("active");
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            autoSlideTimer = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, SLIDE_INTERVAL);
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideTimer) {
+                clearInterval(autoSlideTimer);
+                autoSlideTimer = null;
+            }
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+                goToSlide(currentSlide + 1);
+                startAutoSlide();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+                goToSlide(currentSlide - 1);
+                startAutoSlide();
+            });
+        }
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener("click", () => {
+                goToSlide(idx);
+                startAutoSlide();
+            });
+        });
+
+        sliderWrapper.addEventListener("mouseenter", stopAutoSlide);
+        sliderWrapper.addEventListener("mouseleave", startAutoSlide);
+
+        startAutoSlide();
+    }
+
+    // F) Carrusel Interactivo de Industrias Comerciales (Estilo Paxell project-five)
+    function initIndustriesCarousel() {
+        const track = document.getElementById("industriesTrack");
+        const prevBtn = document.getElementById("indPrevBtn");
+        const nextBtn = document.getElementById("indNextBtn");
+        if (!track) return;
+
+        const cards = track.querySelectorAll(".industry-showcase-card");
+        if (!cards.length) return;
+
+        let currentIndex = 0;
+        let autoTimer = null;
+
+        function getVisibleCount() {
+            if (window.innerWidth <= 768) return 1;
+            if (window.innerWidth <= 1024) return 2;
+            return 3;
+        }
+
+        function updateCarousel() {
+            const visibleCount = getVisibleCount();
+            const maxIndex = Math.max(0, cards.length - visibleCount);
+            if (currentIndex > maxIndex) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = maxIndex;
+
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 24; // 1.5rem
+            const offset = currentIndex * (cardWidth + gap);
+            track.style.transform = `translateX(-${offset}px)`;
+        }
+
+        function nextCard() {
+            const visibleCount = getVisibleCount();
+            const maxIndex = Math.max(0, cards.length - visibleCount);
+            currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+            updateCarousel();
+        }
+
+        function prevCard() {
+            const visibleCount = getVisibleCount();
+            const maxIndex = Math.max(0, cards.length - visibleCount);
+            currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+            updateCarousel();
+        }
+
+        function startAuto() {
+            stopAuto();
+            autoTimer = setInterval(nextCard, 4800);
+        }
+
+        function stopAuto() {
+            if (autoTimer) {
+                clearInterval(autoTimer);
+                autoTimer = null;
+            }
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+                nextCard();
+                startAuto();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+                prevCard();
+                startAuto();
+            });
+        }
+
+        track.addEventListener("mouseenter", stopAuto);
+        track.addEventListener("mouseleave", startAuto);
+        window.addEventListener("resize", updateCarousel);
+
+        updateCarousel();
+        startAuto();
+    }
+
     initScrollReveal();
     initAnimatedCounters();
     initFaqAccordion();
     initScrollNavigation();
+    initHeroSlider();
+    initIndustriesCarousel();
 
     // ==========================================================================
     // FORMULARIO DE COTIZACIÓN (WHATSAPP Y CORREO GMAIL/OUTLOOK)
